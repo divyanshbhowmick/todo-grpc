@@ -19,24 +19,24 @@ const client = new todoPackage.Todo(
 const text = process.argv[2];
 
 // Making the POST request kinda thing
-client.createTodo(
-  {
-    id: -1,
-    text: text,
-  },
-  (err, resp) => {
-    if (!err)
-      console.log("Writing :: Response from Server" + JSON.stringify(resp));
-    else console.error("Writing :: ", err);
-  }
-);
+// client.createTodo(
+//   {
+//     id: -1,
+//     text: text,
+//   },
+//   (err, resp) => {
+//     if (!err)
+//       console.log("Writing :: Response from Server" + JSON.stringify(resp));
+//     else console.error("Writing :: ", err);
+//   }
+// );
 
 // Making the getRequest kind of thing
-client.readTodos({}, (err, resp) => {
-  if (!err)
-    console.log("Reading :: Response from Serverrr" + JSON.stringify(resp));
-  else console.error("Reading :: ", err);
-});
+// client.readTodos({}, (err, resp) => {
+//   if (!err)
+//     console.log("Reading :: Response from Serverrr" + JSON.stringify(resp));
+//   else console.error("Reading :: ", err);
+// });
 
 // Creating a call object for reading the streams sent by server
 const call = client.readTodosStream();
